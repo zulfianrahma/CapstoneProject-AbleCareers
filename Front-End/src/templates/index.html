@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="AbleCareers" />
-    <link rel="icon" href="./Logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="stylesheet" href="../styles/style.css">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <!--Icon-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></link>
     <title>AbleCareers</title>
   </head>
   <body>
-    <header class="app-bar">
-      <div class="app-bar__menu">
-        <button id="hamburgerButton">☰</button>
+    <!--navbar-->
+    <nav class="navbar">
+      <h2 class="navbar-logo"><a href="#"><img class="logo" src="https://o.remove.bg/downloads/9944c45a-79fe-4355-bb03-0eb425831bc2/Desain_tanpa_judul__1_-removebg-preview.png">AbleCareers</a></h2>
+      <div class="navbar-menu">
+        <a href="#home">Home</a>
+        <a href="#findJobs">Find Jobs</a>
+        <a href="#aboutUs">About Us</a>
+        <a href="#">Sign In</a>
       </div>
-      <div class="app-bar__brand">
-        <h1>AbleCareers</h1>
+      <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-      <nav id="navigationDrawer" class="app-bar__navigation">
-        <ul>
-          <li><a href="#/home">Home</a></li>
-          <li><a href="#/find-jobs">Find Jobs</a></li>
-          <li><a href="#/about-us">About Us</a></li>
-        </ul>
-      </nav>
+    </nav>
+    <!--header-->
+    <header>
+      <h1 class="header-title">Breaking Barriers, Building Futures: <br> <span>Connecting Disabled Talents</span></h1>
+      <p class="header-subtitle">Find Your Dream Job With Ease</p>
+      <img class="image-header" src="https://o.remove.bg/downloads/ad0d33c2-23eb-440b-9907-0836fe97903a/4153553-removebg-preview.png" alt="Jobseeker">
+      <div class="search-box">
+        <input type="text" placeholder="Search for Job Title">
+        <button type="submit">Search</button>
+      </div>
     </header>
-    <main id="mainContent"></main>
-    <footer>
-      <p>Copyright © 2023 - AbleCareers</p>
-      <!-- <p>All data obtained from <a href="https://themoviedb.org" target="_blank" rel="noreferrer">TheMovieDB</a></p> -->
-    </footer>
   </body>
 </html>

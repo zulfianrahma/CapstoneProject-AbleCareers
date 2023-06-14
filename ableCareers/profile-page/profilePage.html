@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h2 class="navbar-logo"><a href="#"><img class="logo" src="logo.png"></a></h2>
+      <div class="navbar-menu">
+        <a href="#home">Home</a>
+        <a href="#findJobs">Find Jobs</a>
+        <a href="#aboutUs">About Us</a>
+        <a href="#">Sign In</a>
+      </div>
+      <div class="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+  <div class="profile-container">
+    <div class="profile-top">
+    <div class="profile-picture" id="profile-picture"></div>
+    <div class="profile-button">
+    <input type="file" id="picture-input" class="file-input" accept="image/*">
+    <button id="upload-button" class="upload-button" style="display: none;">Upload Picture</button>
+    </div>
+
+    <p>USER PROFILE</p>
+    </div>
+    <div class="profile-info">
+      <label>Name</label>
+      <p class="profile-text" id="profile-name"></p>
+      <input type="text" id="name-input" class="editable-field" style="display: none;">
+      <hr>
+
+      <label>Address</label>
+      <p class="profile-text" id="profile-address"></p>
+      <input type="text" id="address-input" class="editable-field" style="display: none;">
+      <hr>
+ 
+      <label id="bio-label">Biography</label>
+      <p class="profile-text" id="profile-bio"></p>
+      <textarea id="bio-input" class="editable-field" style="display: none;"></textarea>
+      <hr>
+ 
+    
+ 
+      <button id="edit-button" class="edit-button">Edit Profile</button>
+      <button id="save-button" class="save-button" style="display: none;">Save Changes</button>
+    </div>
+  </div>
+ 
+  <script src="profilePage.js">
+  </script>
+</body>
+</html>

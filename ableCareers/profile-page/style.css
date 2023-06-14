@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  header{
+    background-color: #3377FF;
+  }
+  .navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2.5rem;
+    z-index: 10;
+    color: var(--whiteColor);
+    background: var(--primaryColor);
+    background-color: #3377FF;
+  }
+  
+  .navbar-logo > a {
+    text-decoration: none;
+    color: var(--whiteColor);
+  }
+  .logo {
+    margin-top: -25px;
+    width: 200px;
+  }
+  .navbar-menu {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+      border-bottom: 2px solid ;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+  }
+  
+  .profile-container {
+    max-width: 400px;
+    margin-left: 10px;
+    margin-top: 80px;
+    padding: 20px;
+    border: none;
+  }
+  .profile-top{
+    display: flex;
+    flex-direction: row;
+    row-gap: 2rem;
+  }
+  .profile-top p{
+    font-size: 35px;
+    margin-right: -500px;
+    color: #3377FF;
+    margin-left: 50px;
+    margin-top: 70px;
+  }
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 999px;
+    background-color:gray;
+  }
+  input,textarea{
+    border: none;
+
+  }
+  input:focus , textarea:focus{
+    border:0;outline:0;
+    input:focus {outline:none!important;}
+  }
+  
+
+
+  .profile-info {
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+
+  .profile-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 70px;
+    color: #3377FF;
+  }
+  
+  .profile-info #bio-label{
+    display: block;
+    margin-bottom: 100px;
+    color: #3377FF;
+  }
+  hr{
+    background-color: #3377FF;
+    border: none;
+    width: 1200px;
+    height: 1px;
+  }
+  .profile-info p {
+    margin: 5px 0;
+  }
+
+  .editable-field {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .save-button {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #3377FF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+
+.edit-button{
+    display: inline-block;
+    background-color: #3377FF;
+    color:white;
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+
+}
+
+  .file-input {
+    display: none;
+  }
+
+  .upload-button {
+    width: 200px;
+    height: 200px;
+    border-radius: 999px;
+    float: left;
+    margin-left: -200px;
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+  }
+
+  .upload-button:hover {
+    background-color: #3b3c3c;
+  }

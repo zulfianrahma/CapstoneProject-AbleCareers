@@ -1,1 +1,18 @@
-<!doctype html><html lang="en"><head--><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="AbleCareers"/><link rel="stylesheet" href="../styles/style.css"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><title>AbleCareers</title><script defer="defer" src="app.bundle.js"></script><body><nav class="navbar"><h2 class="navbar-logo"><a href="#"><img class="logo" src="https://o.remove.bg/downloads/9944c45a-79fe-4355-bb03-0eb425831bc2/Desain_tanpa_judul__1_-removebg-preview.png">AbleCareers</a></h2><div class="navbar-menu"><a href="#home">Home</a> <a href="#findJobs">Find Jobs</a> <a href="#aboutUs">About Us</a> <a href="#">Sign In</a></div><div class="menu-toggle"><span class="bar"></span> <span class="bar"></span> <span class="bar"></span></div></nav><header><h1 class="header-title">Breaking Barriers, Building Futures:<br><span>Connecting Disabled Talents</span></h1><p class="header-subtitle">Find Your Dream Job With Ease</p><img class="image-header" src="https://o.remove.bg/downloads/ad0d33c2-23eb-440b-9907-0836fe97903a/4153553-removebg-preview.png" alt="Jobseeker"><div class="search-box"><input placeholder="Search for Job Title"> <button type="submit">Search</button></div></header></body></head--></html>
+<!doctype html><html lang="en"><head--><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content="AbleCareers"/><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; child-src 'self'; font-src 'self';"/><link rel="stylesheet" href="../styles/style.css"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/><link href="./Logo.png"><title>AbleCareers</title><script defer="defer" src="app.bundle.js"></script><body><header><nav class="navbar"><h2 class="navbar-logo"><a href="#"><img class="logo" src="./image-46.png">AbleCareers</a></h2><div class="navbar-toggle-button"><button id="hamburgerButton">☰</button></div><div class="navbar-menu"><a href="/home">Home</a> <a href="/findJobs">Find Jobs</a> <a href="/aboutUs">About Us</a> <a href="/jobs">List Jobs</a> <a href="/signIn">Sign In</a></div><div class="menu-toggle"><span class="bar"></span> <span class="bar"></span> <span class="bar"></span></div></nav><h1 class="header-title">Breaking Barriers, Building Futures:<br><span>Connecting Disabled Talents</span></h1><p class="header-subtitle">Find Your Dream Job With Ease</p><img class="image-header" src="./homeimg.png" alt="Jobseeker"><div class="search-box"><input placeholder="Search for Job Title"> <button type="submit">Search</button></div></header><main id="main-content"></main><footer><p>Copyright © 2023 - AbleCareers</p><p><a>C23-M4083</a></p></footer><script>console.log("about to fetch a data");
+    
+      GetData().catch(error => {
+          console.error(error);
+          });
+    
+      async function GetData(){
+          const response = await fetch('http://localhost:8080/jobs');
+          const responseJson = await response.json();
+          const jobs = await responseJson.data.jobs;
+          
+          console.log(jobs[0]);
+          const jobsContainer = document.querySelector('#main-content');
+          jobsContainer.innerHTML = jobs[0].id;
+          // jobs.forEach((job) => {
+          //   jobsContainer.innerHTML += createJobItemTemplate(job);
+          // });
+        }</script></body></head--></html>

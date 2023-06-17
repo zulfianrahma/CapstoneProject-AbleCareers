@@ -8,7 +8,7 @@
     font-size: 1.5em;
   }
 
-  .app-bar .app-bar__menu {
+  .navbar-toggle-button {
     display: none;
   }
 

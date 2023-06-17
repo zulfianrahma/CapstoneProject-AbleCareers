@@ -1,16 +1,16 @@
 :root {
-  --primaryColor:#3377FF;
-  --whiteColor:#fff;
-  --blackColor:#333;
-  --greyColor:#f6f8fa;
-  --labelColor:#003D99;
+  --primaryColor: #3377ff;
+  --whiteColor: #fff;
+  --blackColor: #333;
+  --greyColor: #f6f8fa;
+  --labelColor: #003d99;
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 
 body {
@@ -43,6 +43,20 @@ h1 {
 .logo {
   width: 45px;
 }
+
+.navbar-toggle-button {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-toggle-button button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 16px;
+  cursor: pointer;
+}
+
 .navbar-menu {
   width: 400px;
   display: flex;
@@ -55,12 +69,12 @@ h1 {
 }
 
 nav a:hover {
-	border-bottom: 2px solid ;
-	transition: all 0.5s ease;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
+  border-bottom: 2px solid;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
 }
 
 .menu-toggle {
@@ -72,7 +86,7 @@ nav a:hover {
   height: 2px;
   margin: 3px auto;
   transition: all 0.3 ease-in-out;
-  background-color:var(--whiteColor);
+  background-color: var(--whiteColor);
   cursor: pointer;
   -webkit-transition: all 0.3 ease-in-out;
   -moz-transition: all 0.3 ease-in-out;
@@ -83,7 +97,7 @@ nav a:hover {
 header {
   min-height: 500px;
   position: relative;
-  background-color: #3377FF;
+  background-color: #3377ff;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -124,7 +138,7 @@ header {
   left: 13%;
 }
 
-.search-box input[type="text"] {
+.search-box input[type='text'] {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
@@ -134,9 +148,9 @@ header {
 
 .search-box button {
   padding: 8px 12px;
-  background-color:var(--labelColor);
+  background-color: var(--labelColor);
   border: none;
-  color:var(--greyColor);
+  color: var(--greyColor);
   border-radius: 4px;
   cursor: pointer;
 }
@@ -148,10 +162,10 @@ header {
 }
 
 .image-header {
-    position: absolute;
-    width: 450px;
-    top: 10%;
-    right: 10%;
-    background-image: none;
-    transform: scaleX(-1);
+  position: absolute;
+  width: 450px;
+  top: 10%;
+  right: 4%;
+  background-image: none;
+  /* transform: scaleX(-1); */
 }

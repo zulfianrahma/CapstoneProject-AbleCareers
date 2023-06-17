@@ -1,7 +1,7 @@
 const { nanoid } = require('nanoid');
-const posts = require('./posts');
+const jobs = require('./jobs');
 
-const addPostHandler = (request, h) => {
+const addJobHandler = (request, h) => {
   const {
     jobTitle,
     company,
@@ -17,7 +17,7 @@ const addPostHandler = (request, h) => {
   const createdAt = new Date().toUTCString();
   const updatedAt = createdAt;
 
-  const newPost = {
+  const newJob = {
     id,
     jobTitle,
     company,
@@ -31,7 +31,7 @@ const addPostHandler = (request, h) => {
     status, // open/close
   };
 
-  posts.push(newPost);
+  jobs.push(newJob);
 
   if (
     jobTitle === undefined ||
@@ -41,7 +41,7 @@ const addPostHandler = (request, h) => {
     workplaceType === undefined ||
     description === undefined
   ) {
-    posts.pop();
+    jobs.pop();
     const response = h.response({
       status: 'fail',
       message:
@@ -54,7 +54,7 @@ const addPostHandler = (request, h) => {
       status: 'success',
       message: 'Lowongan berhasil ditambahkan',
       data: {
-        postId: id,
+        jobId: id,
       },
     });
     response.code(201);
@@ -62,57 +62,60 @@ const addPostHandler = (request, h) => {
   }
 };
 
-const getAllPostsHandler = (request, h) => {
+const getAllJobsHandler = (request, h) => {
   const { jobTitle, company, location, jobType, workplaceType, tags, status } =
     request.query;
 
-  let postsRequest = posts;
+  let jobsRequest = jobs;
 
   if (jobTitle !== undefined) {
-    postsRequest = posts.filter((post) =>
-      post.jobTitle.toLowerCase().includes(jobTitle.toLowerCase())
+    jobsRequest = jobs.filter((job) =>
+      job.jobTitle.toLowerCase().includes(jobTitle.toLowerCase())
     );
   }
   if (company !== undefined) {
-    postsRequest = posts.filter((post) =>
-      post.company.toLowerCase().includes(company.toLowerCase())
+    jobsRequest = jobs.filter((job) =>
+      job.company.toLowerCase().includes(company.toLowerCase())
     );
   }
   if (location !== undefined) {
-    postsRequest = posts.filter((post) =>
-      post.location.toLowerCase().includes(location.toLowerCase())
+    jobsRequest = jobs.filter((job) =>
+      job.location.toLowerCase().includes(location.toLowerCase())
     );
   }
   if (jobType !== undefined) {
-    postsRequest = posts.filter((post) =>
-      post.jobType.toLowerCase().includes(jobType.toLowerCase())
+    jobsRequest = jobs.filter((job) =>
+      job.jobType.toLowerCase().includes(jobType.toLowerCase())
     );
   }
   if (workplaceType !== undefined) {
-    postsRequest = posts.filter((post) =>
-      post.workplaceType.toLowerCase().includes(workplaceType.toLowerCase())
+    jobsRequest = jobs.filter((job) =>
+      job.workplaceType.toLowerCase().includes(workplaceType.toLowerCase())
     );
   }
   if (tags !== undefined) {
-    postsRequest = posts.filter((post) =>
-      post.tags.toLowerCase().includes(tags.toLowerCase())
+    jobsRequest = jobs.filter((job) =>
+      job.tags.toLowerCase().includes(tags.toLowerCase())
     );
   }
   if (status !== undefined) {
-    postsRequest = posts.filter((post) => post.status === (status === '1'));
+    jobsRequest = jobs.filter((job) => job.status === (status === '1'));
   }
 
   const response = h.response({
     status: 'success',
     data: {
-      posts: postsRequest.map((post) => ({
-        id: post.id,
-        jobTitle: post.jobTitle,
-        company: post.company,
-        location: post.location,
-        jobType: post.jobType,
-        workplaceType: post.workplaceType,
-        status: post.status,
+      jobs: jobsRequest.map((job) => ({
+        id: job.id,
+        jobTitle: job.jobTitle,
+        company: job.company,
+        location: job.location,
+        jobType: job.jobType,
+        workplaceType: job.workplaceType,
+        tags: job.tags,
+        createdAt: job.createdAt,
+        updatedAt: job.updatedAt,
+        status: job.status,
       })),
     },
   });
@@ -120,16 +123,16 @@ const getAllPostsHandler = (request, h) => {
   return response;
 };
 
-const getPostByIdHandler = (request, h) => {
-  const { postId } = request.params;
+const getJobByIdHandler = (request, h) => {
+  const { jobId } = request.params;
 
-  const post = posts.filter((b) => b.id === postId)[0];
+  const job = jobs.filter((b) => b.id === jobId)[0];
 
-  if (post !== undefined) {
+  if (job !== undefined) {
     const response = h.response({
       status: 'success',
       data: {
-        post,
+        job,
       },
     });
     response.code(200);
@@ -144,8 +147,8 @@ const getPostByIdHandler = (request, h) => {
   return response;
 };
 
-const editPostByIdHandler = (request, h) => {
-  const { postId } = request.params;
+const editJobByIdHandler = (request, h) => {
+  const { jobId } = request.params;
   const {
     jobTitle,
     company,
@@ -157,7 +160,7 @@ const editPostByIdHandler = (request, h) => {
     status, // open/close
   } = request.payload;
   const updatedAt = new Date().toUTCString();
-  const index = posts.findIndex((post) => post.id === postId);
+  const index = jobs.findIndex((job) => job.id === jobId);
   if (
     !jobTitle ||
     !company ||
@@ -178,8 +181,8 @@ const editPostByIdHandler = (request, h) => {
   }
 
   if (index !== -1) {
-    posts[index] = {
-      ...posts[index],
+    jobs[index] = {
+      ...jobs[index],
       jobTitle,
       company,
       location,
@@ -205,12 +208,12 @@ const editPostByIdHandler = (request, h) => {
   return response;
 };
 
-const deletePostByIdHandler = (request, h) => {
-  const { postId } = request.params;
+const deleteJobByIdHandler = (request, h) => {
+  const { jobId } = request.params;
 
-  const index = posts.findIndex((post) => post.id === postId);
+  const index = jobs.findIndex((job) => job.id === jobId);
   if (index !== -1) {
-    posts.splice(index, 1);
+    jobs.splice(index, 1);
     const response = h.response({
       status: 'success',
       message: 'Lowongan berhasil dihapus',
@@ -228,9 +231,9 @@ const deletePostByIdHandler = (request, h) => {
 };
 
 module.exports = {
-  addPostHandler,
-  getAllPostsHandler,
-  getPostByIdHandler,
-  editPostByIdHandler,
-  deletePostByIdHandler,
+  addJobHandler,
+  getAllJobsHandler,
+  getJobByIdHandler,
+  editJobByIdHandler,
+  deleteJobByIdHandler,
 };

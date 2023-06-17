@@ -1,36 +1,36 @@
 const {
-  addPostHandler,
-  getAllPostsHandler,
-  getPostByIdHandler,
-  editPostByIdHandler,
-  deletePostByIdHandler,
+  addJobHandler,
+  getAllJobsHandler,
+  getJobByIdHandler,
+  editJobByIdHandler,
+  deleteJobByIdHandler,
 } = require('./handler');
 
 const routes = [
   {
     method: 'POST',
-    path: '/posts',
-    handler: addPostHandler,
+    path: '/post',
+    handler: addJobHandler,
   },
   {
     method: 'GET',
-    path: '/posts',
-    handler: getAllPostsHandler,
+    path: '/jobs',
+    handler: getAllJobsHandler,
   },
   {
     method: 'GET',
-    path: '/posts/{postId}',
-    handler: getPostByIdHandler,
+    path: '/jobs/{jobId}',
+    handler: getJobByIdHandler,
   },
   {
     method: 'PUT',
-    path: '/posts/{postId}',
-    handler: editPostByIdHandler,
+    path: '/editJobs/{jobId}',
+    handler: editJobByIdHandler,
   },
   {
     method: 'DELETE',
-    path: '/posts/{postId}',
-    handler: deletePostByIdHandler,
+    path: '/deleteJobs/{jobId}',
+    handler: deleteJobByIdHandler,
   },
 ];
 

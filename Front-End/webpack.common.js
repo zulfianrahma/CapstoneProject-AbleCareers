@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -36,6 +37,19 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
+        },
+      ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          // eslint-disable-next-line prefer-regex-literals
+          urlPattern: new RegExp('http://localhost:8080/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'api-cache',
+          },
         },
       ],
     }),

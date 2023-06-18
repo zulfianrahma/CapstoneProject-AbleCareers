@@ -6,9 +6,11 @@
     <meta name="description" content="AbleCareers" />
     <link rel="stylesheet" href="../styles/style.css">
     <!--Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/> -->
     <!--Icon-->
     <link href="./Logo.png"></link>
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+
     <title>AbleCareers</title>
   </head>
   <body>
@@ -21,17 +23,17 @@
           <button id="hamburgerButton">☰</button>
         </div>
         <div class="navbar-menu">
-          <a href="/home">Home</a>
-          <a href="/findJobs">Find Jobs</a>
-          <a href="/aboutUs">About Us</a>
-          <a href="/jobs">List Jobs</a>
-          <a href="/signIn">Sign In</a>
+          <a href="/#/home">Home</a>
+          <a href="/#/add-job">Add Job</a>
+          <a href="/#/about-us">About Us</a>
+          <a href="/#/list-jobs">List Jobs</a>
+          <a href="/#/sign-in">Sign In</a>
         </div>
-        <div class="menu-toggle">
+        <!-- <div class="menu-toggle">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div>
+        </div> -->
       </nav>
       <!-- header -->
       <h1 class="header-title">Breaking Barriers, Building Futures: <br> <span>Connecting Disabled Talents</span></h1>
@@ -47,7 +49,7 @@
       <p>Copyright © 2023 - AbleCareers</p>
       <p><a>C23-M4083</a></p>
     </footer>
-    <script>
+    <!-- <script>
       console.log("about to fetch a data");
     
       GetData().catch(error => {
@@ -62,10 +64,7 @@
           console.log(jobs[0]);
           const jobsContainer = document.querySelector('#main-content');
           jobsContainer.innerHTML = jobs[0].id;
-          // jobs.forEach((job) => {
-          //   jobsContainer.innerHTML += createJobItemTemplate(job);
-          // });
         }
-    </script>
+    </script> -->
   </body>
 </html>

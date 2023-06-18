@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 :root {
   --primaryColor: #3377ff;
   --whiteColor: #fff;
@@ -168,4 +170,24 @@ header {
   right: 4%;
   background-image: none;
   /* transform: scaleX(-1); */
+}
+
+/* Like */
+
+.save {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }

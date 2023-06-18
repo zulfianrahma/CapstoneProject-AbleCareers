@@ -1,11 +1,11 @@
 import JobSource from '../../data/job-source';
 import { createJobItemTemplate } from '../templates/template-creator';
 
-const ListJob = {
+const ListJobs = {
   async render() {
     return `
         <div id="content" class="content">
-            <h2 class="content__heading"><a id="content__heading__title" href="#/list">Daftar Pekerjaan</a></h2>
+            <h2 class="content-heading"><a id="content-heading-title" href="#/list-jobs">Daftar Pekerjaan</a></h2>
             <div id="jobs" class="jobs">
             </div>
         </div>
@@ -22,4 +22,4 @@ const ListJob = {
   },
 };
 
-export default ListJob;
+export default ListJobs;

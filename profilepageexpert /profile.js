@@ -33,7 +33,6 @@ const Profile = {
       <button id="save-button" class="save-button" style="display: none;">Save Changes</button>
     </div>
   </div>
-  <script src="/templates/profilepage.js></script>
         `;
   },
 };

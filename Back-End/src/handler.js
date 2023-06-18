@@ -10,11 +10,11 @@ const addJobHandler = (request, h) => {
     workplaceType, // on-site, remote, hybrid
     tags,
     description,
-    status, // open/close
+    jobStatus, // open/close
   } = request.payload;
 
-  const id = nanoid(16);
-  const createdAt = new Date().toUTCString();
+  const id = nanoid(16).toLowerCase();
+  const createdAt = new Date().toLocaleString();
   const updatedAt = createdAt;
 
   const newJob = {
@@ -28,7 +28,7 @@ const addJobHandler = (request, h) => {
     createdAt,
     updatedAt,
     description,
-    status, // open/close
+    jobStatus, // open/close
   };
 
   jobs.push(newJob);
@@ -63,8 +63,15 @@ const addJobHandler = (request, h) => {
 };
 
 const getAllJobsHandler = (request, h) => {
-  const { jobTitle, company, location, jobType, workplaceType, tags, status } =
-    request.query;
+  const {
+    jobTitle,
+    company,
+    location,
+    jobType,
+    workplaceType,
+    tags,
+    jobStatus,
+  } = request.query;
 
   let jobsRequest = jobs;
 
@@ -98,8 +105,8 @@ const getAllJobsHandler = (request, h) => {
       job.tags.toLowerCase().includes(tags.toLowerCase())
     );
   }
-  if (status !== undefined) {
-    jobsRequest = jobs.filter((job) => job.status === (status === '1'));
+  if (jobStatus !== undefined) {
+    jobsRequest = jobs.filter((job) => job.status === (jobStatus === '1'));
   }
 
   const response = h.response({
@@ -115,7 +122,7 @@ const getAllJobsHandler = (request, h) => {
         tags: job.tags,
         createdAt: job.createdAt,
         updatedAt: job.updatedAt,
-        status: job.status,
+        jobStatus: job.jobStatus,
       })),
     },
   });
@@ -157,9 +164,9 @@ const editJobByIdHandler = (request, h) => {
     workplaceType, // on-site, remote, hybrid
     tags,
     description,
-    status, // open/close
+    jobStatus, // open/close
   } = request.payload;
-  const updatedAt = new Date().toUTCString();
+  const updatedAt = new Date().toLocaleString();
   const index = jobs.findIndex((job) => job.id === jobId);
   if (
     !jobTitle ||
@@ -169,7 +176,7 @@ const editJobByIdHandler = (request, h) => {
     !workplaceType ||
     !tags ||
     !description ||
-    !status
+    !jobStatus
   ) {
     const response = h.response({
       status: 'fail',
@@ -190,7 +197,7 @@ const editJobByIdHandler = (request, h) => {
       workplaceType, // on-site, remote, hybrid
       tags,
       description,
-      status, // open/close
+      jobStatus, // open/close
       updatedAt,
     };
     const response = h.response({

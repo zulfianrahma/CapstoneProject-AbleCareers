@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http-server dist"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
     "html-webpack-plugin": "^5.5.3",
+    "http-server": "^14.1.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.86.0",
     "webpack-bundle-analyzer": "^4.9.0",

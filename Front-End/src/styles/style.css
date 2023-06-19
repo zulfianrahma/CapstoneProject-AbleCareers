@@ -43,7 +43,7 @@ h1 {
   color: var(--whiteColor);
 }
 .logo {
-  width: 45px;
+  width: 150px;
 }
 
 .navbar-toggle-button {
@@ -197,6 +197,64 @@ header {
 .job-preview-content img {
   max-height: fit-content;
   max-width: 50vw;
+}
+.blog {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.blog-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.blog-card {
+  width: 300px;
+  height: auto;
+  margin: 1rem;
+  box-shadow: 0 1px 6px 0 rgba(49 53 59 / 12%);
+  cursor: pointer;
+}
+.blog-card:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0;
+}
+
+.blog-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.blog-detail {
+  padding: 20px;
+}
+
+.blog-detail span {
+  color: var(--primaryColor);
+  font-size: 0.7rem;
+}
+
+.blog-detail h4 {
+  padding: 10px 0;
+}
+
+.divinder {
+  margin: 1rem 0;
+  border: 0.5px solid var(--primaryColor);
+}
+
+.blog-more {
+  color: var(--primaryColor);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+i {
+  color:var(--whiteColor);
 }
 
 /* About Us Page */

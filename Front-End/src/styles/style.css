@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primaryColor: #3377ff;
+  --whiteColor: #fff;
+  --blackColor: #333;
+  --greyColor: #f6f8fa;
+  --labelColor: #003d99;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Poppins';
+}
+
+body {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  line-height: 1.5;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 2.5rem;
+  z-index: 10;
+  color: var(--whiteColor);
+  background: var(--primaryColor);
+}
+
+.navbar-logo > a {
+  text-decoration: none;
+  color: var(--whiteColor);
+}
+.logo {
+  width: 45px;
+}
+
+.navbar-toggle-button {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-toggle-button button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-menu a {
+  color: var(--whiteColor);
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 2px solid;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.menu-toggle {
+  display: block;
+}
+
+.menu-toggle .bar {
+  width: 15px;
+  height: 2px;
+  margin: 3px auto;
+  transition: all 0.3 ease-in-out;
+  background-color: var(--whiteColor);
+  cursor: pointer;
+  -webkit-transition: all 0.3 ease-in-out;
+  -moz-transition: all 0.3 ease-in-out;
+  -ms-transition: all 0.3 ease-in-out;
+  -o-transition: all 0.3 ease-in-out;
+}
+
+header {
+  min-height: 500px;
+  position: relative;
+  background-color: #3377ff;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-title {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  font-weight: bolder;
+  font-size: 35px;
+  color: var(--whiteColor);
+  text-shadow: 3px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.header-title > span {
+  color: var(--labelColor);
+}
+
+.header-subtitle {
+  position: absolute;
+  top: 65%;
+  left: 13%;
+  font-weight: bolder;
+  font-size: 18px;
+  color: var(--whiteColor);
+  text-shadow: 3px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.search-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  min-width: 400px;
+  margin-top: 10px;
+  top: 70%;
+  left: 13%;
+}
+
+.search-box input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.search-box button {
+  padding: 8px 12px;
+  background-color: var(--labelColor);
+  border: none;
+  color: var(--greyColor);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  border: 2px solid var(--labelColor);
+  color: var(--labelColor);
+  background-color: var(--primaryColor);
+}
+
+.image-header {
+  position: absolute;
+  width: 450px;
+  top: 10%;
+  right: 4%;
+  background-image: none;
+  /* transform: scaleX(-1); */
+}
+
+/* Like */
+
+.save {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Home Page */
+.job-preview-content img {
+  max-height: fit-content;
+  max-width: 50vw;
+}
+
+/* About Us Page */
+
+/* Detail Page */
+
+/* Add Job Page */
+ .content-heading a{
+  text-decoration: none;
+  color: #3377ff;
+ }
+ .content-heading{
+  text-align: center;
+  margin-top: 30px;
+ }
+ .top-form{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 2rem;
+  margin-left: 30px;
+ }
+ .mid-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 30px;
+  margin-top: 30px;
+ }
+.mid-bot-form{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.bot-form{
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.bot-form textarea{
+  border: none;
+}
+.bot-form hr{
+  background-color: #3377ff;
+  width: 90%;
+}
+.last-form{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.profile-save #buttonSave{
+  display: flex;
+  justify-content: center;
+  margin-left: 710px;
+  width: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+border: none;
+border-radius: 5px;
+background-color: #3377ff;
+color: white;
+}
+ #inputJobTitle, #inputCompany, #inputLocation{
+  display: flex;
+  flex-direction: column;
+ }
+input{
+  border: none;
+}
+hr{
+  background-color: #3377ff;
+  height: 2.5px;
+  width: 500px;
+}
+.card-body{
+  border: solid #3377ff;
+}
+/* List Jobs Page */
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--primaryColor);
+  color: var(--whiteColor);
+  padding: 3rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer-wrapper h3,
+.footer-wrapper h4 {
+  line-height: 3;
+  color: var(--labelColor);
+  font-weight: bolder;
+}
+
+.footer-wrapper p {
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.social-media {
+  margin-top: 1rem;
+}
+
+.social-media a {
+  text-decoration: none;
+  color: var(--greyColor);
+  margin-right: 10px;
+}
+
+.footer-wrapper a {
+  text-decoration: none;
+  color: var(--greyColor);
+  line-height: 2;
+}
+
+.footer-wrapper a:hover {
+	text-transform: capitalize;
+	font-weight: 300;
+	color: var(--labelColor);
+	transition: all 0.3s ease;
+}

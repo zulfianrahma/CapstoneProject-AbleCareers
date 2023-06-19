@@ -104,64 +104,82 @@ const createJobDetailTemplate = (job) => `
 
 const createAddJobTemplate = () => `
   <div class="card-body">
-    <div class="form-group">
-      <label for="inputJobTitle">Nama Pekerjaan</label>
-      <input id="inputJobTitle" type="text" class="form-control" placeholder="Nama Pekerjaan">
+    <div class="top-form">
+      <div class="form-group">
+        <label for="inputJobId">Id</label>
+        <input id="inputJobId" type="text" class="editable-field" style="display: none;" placeholder="(terisi otomatis)">
+      </div>
+      <div class="form-group">
+        <label for="inputJobTitle">Nama Pekerjaan</label>
+        <input id="inputJobTitle" type="text" class="editable-field" placeholder="Nama Pekerjaan">
+      </div>
+      <div class="form-group">
+        <label for="inputCompany">Nama Perusahaan</label>
+        <input id="inputCompany" type="text" class="editable-field" placeholder="Nama Perusahaan">
+      </div>
+      <div class="form-group">
+        <label for="inputLocation">Lokasi Pekerjaan</label>
+        <input id="inputLocation" type="text" class="editable-field" placeholder="Lokasi Pekerjaan">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputCompany">Nama Perusahaan</label>
-      <input id="inputCompany" type="text" class="form-control" placeholder="Nama Perusahaan">
+    <div class="mid-form">
+      <div class="form-group">
+        <label for="inputJobType">Jenis Pekerjaan</label><br>
+        <input type="radio" id="full-time" name="job-type" value="Full-time">
+        <label for="full-time">Full-time</label><br>
+        <input type="radio" id="part-time" name="job-type" value="Part-time">
+        <label for="part-time">Part-time</label><br>
+        <input type="radio" id="internship" name="job-type" value="Internship">
+        <label for="internship">Internship</label>
+      </div>
+      <div class="form-group">
+        <label for="inputWorkplaceType">Model Pekerjaan</label><br>
+        <input type="radio" id="on-site" name="workplace-type" value="On-site">
+        <label for="on-site">On-site</label><br>
+        <input type="radio" id="remote" name="workplace-type" value="Remote">
+        <label for="remote">Remote</label><br>
+        <input type="radio" id="hybrid" name="workplace-type" value="Hybrid">
+        <label for="hybrid">Hybrid</label>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputLocation">Lokasi Pekerjaan</label>
-      <input id="inputLocation" type="text" class="form-control" placeholder="Lokasi Pekerjaan">
+    <div class="mid-bot-form">
+      <div class="form-group">
+        <label for="inputTags">Jenis Disabilitas</label><br>
+        <input type="checkbox" id="tuna-daksa" name="input-tags" value="Tuna daksa">
+        <label for="tuna-daksa">Tuna daksa</label><br>
+        <input type="checkbox" id="tuna-rungu" name="input-tags" value="Tuna rungu">
+        <label for="tuna-rungu">Tuna rungu</label><br>
+        <input type="checkbox" id="tuna-wicara" name="input-tags" value="Tuna wicara">
+        <label for="tuna-wicara">Tuna wicara</label><br>
+        <input type="checkbox" id="tuna-netra" name="input-tags" value="Tuna netra">
+        <label for="tuna-netra">Tuna netra</label><br>
+        <input type="checkbox" id="tuna-grahita" name="input-tags" value="Tuna grahita">
+        <label for="tuna-grahita">Tuna grahita</label><br>
+        <input type="checkbox" id="disabilitas-mental" name="input-tags" value="Disabilitas mental">
+        <label for="disabilitas-mental">Disabilitas mental</label><br>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputJobType">Jenis Pekerjaan</label><br>
-      <input type="radio" id="full-time" name="job-type" value="Full-time">
-      <label for="full-time">Full-time</label><br>
-      <input type="radio" id="part-time" name="job-type" value="Part-time">
-      <label for="part-time">Part-time</label><br>
-      <input type="radio" id="internship" name="job-type" value="Internship">
-      <label for="internship">Internship</label>
+    <div class="bot-form">
+      <div class="form-group">
+        <label for="inputDescription">Detail Pekerjaan</label><br>
+        <textarea class="editable-field" id="inputDescription" name="input-description" rows="10" cols="80" placeholder="tuliskan detail pekerjaan"></textarea> 
+        <hr>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputWorkplaceType">Model Pekerjaan</label><br>
-      <input type="radio" id="on-site" name="workplace-type" value="On-site">
-      <label for="on-site">On-site</label><br>
-      <input type="radio" id="remote" name="workplace-type" value="Remote">
-      <label for="remote">Remote</label><br>
-      <input type="radio" id="hybrid" name="workplace-type" value="Hybrid">
-      <label for="hybrid">Hybrid</label>
+    <div class="last-form">
+      <div class="form-group">
+        <label for="inputStatus">Status Lowongan</label><br>
+        <input type="radio" id="open" name="job-status" value="Open">
+        <label for="open">Open</label><br>
+        <input type="radio" id="close" name="job-status" value="Close">
+        <label for="close">Close</label><br>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputTags">Jenis Disabilitas</label><br>
-      <input type="checkbox" id="tuna-daksa" name="input-tags" value="Tuna daksa">
-      <label for="tuna-daksa">Tuna daksa</label><br>
-      <input type="checkbox" id="tuna-rungu" name="input-tags" value="Tuna rungu">
-      <label for="tuna-rungu">Tuna rungu</label><br>
-      <input type="checkbox" id="tuna-wicara" name="input-tags" value="Tuna wicara">
-      <label for="tuna-wicara">Tuna wicara</label><br>
-      <input type="checkbox" id="tuna-netra" name="input-tags" value="Tuna netra">
-      <label for="tuna-netra">Tuna netra</label><br>
-      <input type="checkbox" id="tuna-grahita" name="input-tags" value="Tuna grahita">
-      <label for="tuna-grahita">Tuna grahita</label><br>
-      <input type="checkbox" id="disabilitas-mental" name="input-tags" value="Disabilitas mental">
-      <label for="disabilitas-mental">Disabilitas mental</label><br>
-    </div>
-    <div class="form-group">
-      <label for="inputDescription">Detail Pekerjaan</label><br>
-      <textarea id="inputDescription" name="input-description" rows="10" cols="80" placeholder="tuliskan detail pekerjaan"></textarea> 
-    </div>
-    <div class="form-group">
-      <label for="inputStatus">Status Lowongan</label><br>
-      <input type="radio" id="open" name="job-status" value="Open">
-      <label for="open">Open</label><br>
-      <input type="radio" id="close" name="job-status" value="Close">
-      <label for="close">Close</label><br>
-    </div>
-    <div class="form-group">
-      <button id="buttonSave" class="btn btn-success" value="save">Save</button>
+    <div class="profile-save">
+      <div class="form-group">
+        <button id="buttonAdd" class="btn btn-success" value="save">Tambahkan</button>
+        <button id="buttonEdit" class="btn btn-success" value="edit" style="display: none;">Simpan perubahan</button>
+      </div>
     </div>
   </div>
 `;
@@ -182,24 +200,20 @@ const createTeamIdentityTemplate = () => `
 <h2><a href="https://github.com/ardiankholid/CapstoneProject-AbleCareers">Team</a></h2>
 <div class="about-container">
   <div class="ardian">
-    <img class="image" src="">
-    <h2><a href="https://github.com/ardiankholid">Ardian Kholid Ashidiq</a></h2><br>
-    <p>F013XB387</p>
+    <img class="image" src="Assets/ardian.png">
+    <h2><a href="https://github.com/ardiankholid">Ardian Kholid Ashidiq || F013XB387</a></h2>
   </div>
   <div class="aldyn">
-    <img class="image" src="">
-    <h2><a href="https://github.com/AldynG">Muhammad Aldyn Ghifari</a></h2><br>
-    <p>F086XB185</p>
+    <img class="image" src="Assets/aldyn.png">
+    <h2><a href="https://github.com/AldynG">Muhammad Aldyn Ghifari || F086XB185</a></h2>
   </div>
   <div class="safrin">
-    <img class="image" src="">
-    <h2><a href="https://github.com/aappiinn">Muhammad Safrin Utama</a></h2><br>
-    <p>F013XB169</p>
+    <img class="image" src="Assets/apin.png">
+    <h2><a href="https://github.com/aappiinn">Muhammad Safrin Utama || F013XB169</a></h2>
   </div>
   <div class="zulfian">
-    <img class="image" src="">
-    <h2><a href="https://github.com/zulfianrahma">Zulfian Rahmadiansyah</a></h2><br>
-    <p>F133XB482</p>
+    <img class="image" src="Assets/zulfian.png">
+    <h2><a href="https://github.com/zulfianrahma">Zulfian Rahmadiansyah || F133XB482</a></h2><br>
   </div>
 </div>
 `;

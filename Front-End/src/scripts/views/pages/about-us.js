@@ -5,7 +5,7 @@ const AboutUs = {
     return `
     <div class="about-us" id="aboutUs">
       <div class="about-title">
-        <h2>About Us</h2><br>
+        <h2>About Us :</h2><br>
         <p>AbleCareers adalah aplikasi inovatif yang dikembangkan oleh kelompok Capstone MSIB Cycle 4 dicoding untuk memberikan informasi lowongan pekerjaan kepada para penyandang disabilitas yang mengalami kesulitan dalam mencari pekerjaan.</p>
       </div>
       <div class="about-us-content"></div>

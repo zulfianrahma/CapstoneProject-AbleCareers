@@ -30,9 +30,9 @@ const AddJob = {
     const addTags = DisplayCheckboxValue('input-tags');
     const addDescription = document.querySelector('#inputDescription');
     const addJobStatus = DisplayRadioValue('job-status');
-    const buttonSave = document.querySelector('#buttonSave');
+    const buttonAdd = document.querySelector('#buttonAdd');
 
-    buttonSave.addEventListener('click', () => {
+    buttonAdd.addEventListener('click', () => {
       const job = {
         jobTitle: addJobTitle.value,
         company: addCompany.value,

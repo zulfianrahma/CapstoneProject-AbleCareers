@@ -30,13 +30,13 @@ class JobSource {
     this.listJob();
   }
 
-  static async updateJob({ job, id }) {
+  static async updateJob({ edited, id }) {
     const options = {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(job),
+      body: JSON.stringify(edited),
     };
 
     const response = await fetch(API_ENDPOINT.EDIT(id), options);

@@ -3,17 +3,14 @@ import { createProfileTemplate } from '../templates/template-creator';
 const Profile = {
   async render() {
     return `
-        <div id="profile-container" class="profile-container"></div>
+  <div id="profile-container" class="profile-container">
+  </div>
         `;
   },
-
   async afterRender() {
-    const searchBar = document.querySelector('.search-box');
-    searchBar.style.display = 'none';
-
     const profileContainer = document.querySelector('#profile-container');
 
-    profileContainer.innerHTML = createProfileTemplate();
+    profileContainer.innerHTML = createProfileTemplate;
     const user = {
       name: '',
       address: '',
@@ -34,7 +31,8 @@ const Profile = {
     const editableFields = (editable) => {
       // eslint-disable-next-line no-shadow
       const editableFields = document.getElementsByClassName('editable-field');
-      for (let i = 0; i < editableFields.length; i += 1) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < editableFields.length; i++) {
         if (editable) {
           editableFields[i].style.display = 'block';
           editableFields[i].removeAttribute('readonly');
@@ -94,11 +92,9 @@ const Profile = {
     });
 
     // Event listener for the picture input change
-    document
-      .getElementById('picture-input')
-      .addEventListener('change', (event) => {
-        handlePictureUpload(event);
-      });
+    document.getElementById('picture-input').addEventListener('change', (event) => {
+      handlePictureUpload(event);
+    });
 
     // Call the function to populate the profile
     updateProfile();

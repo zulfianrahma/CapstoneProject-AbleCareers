@@ -1,5 +1,7 @@
 import JobSource from '../../data/job-source';
 import { createAddJobTemplate } from '../templates/template-creator';
+import DisplayRadioValue from '../../utils/display-radio-value';
+import DisplayCheckboxValue from '../../utils/display-checkbox-value';
 
 const AddJob = {
   async render() {
@@ -14,48 +16,37 @@ const AddJob = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render
+    const searchBar = document.querySelector('.search-box');
+    searchBar.style.display = 'none';
+
     const addJobContainer = document.querySelector('#add-job');
     addJobContainer.innerHTML = createAddJobTemplate();
 
-    const jobTitle = document.querySelector('#inputJobTitle');
-    const company = document.querySelector('#inputCompany');
-    const location = document.querySelector('#inputLocation');
-    const jobType = document.querySelector('#inputJobType');
-    const workplaceType = document.querySelector('#inputWorkplaceType');
-    const tags = document.querySelector('#inputTags');
-    const description = document.querySelector('#inputDescription');
-    const jobStatus = document.querySelector('#inputStatus');
+    const addJobTitle = document.querySelector('#inputJobTitle');
+    const addCompany = document.querySelector('#inputCompany');
+    const addLocation = document.querySelector('#inputLocation');
+    const addJobType = DisplayRadioValue('job-type');
+    const addWorkplaceType = DisplayRadioValue('workplace-type');
+    const addTags = DisplayCheckboxValue('input-tags');
+    const addDescription = document.querySelector('#inputDescription');
+    const addJobStatus = DisplayRadioValue('job-status');
     const buttonSave = document.querySelector('#buttonSave');
-    const buttonUpdate = document.querySelector('#buttonUpdate');
 
     buttonSave.addEventListener('click', () => {
       const job = {
-        jobTitle: jobTitle.value,
-        company: company.value,
-        location: location.value,
-        jobType: jobType.value, // full-time, part-time, contract, volunteer, internship
-        workplaceType: workplaceType.value, // on-site, remote, hybrid
-        tags: tags.value,
-        description: description.value,
-        jobStatus: jobStatus.value, // open/close
+        jobTitle: addJobTitle.value,
+        company: addCompany.value,
+        location: addLocation.value,
+        jobType: addJobType, // full-time, part-time, internship
+        workplaceType: addWorkplaceType, // on-site, remote, hybrid
+        tags: addTags,
+        description: addDescription.value,
+        jobStatus: addJobStatus, // open/close
       };
 
       JobSource.insertJob(job);
-    });
-
-    buttonUpdate.addEventListener('click', () => {
-      const job = {
-        jobTitle: jobTitle.value,
-        company: company.value,
-        location: location.value,
-        jobType: jobType.value, // full-time, part-time, contract, volunteer, internship
-        workplaceType: workplaceType.value, // on-site, remote, hybrid
-        tags: tags.value,
-        description: description.value,
-        jobStatus: jobStatus.value, // open/close
-      };
-
-      JobSource.updateJob(job);
+      // eslint-disable-next-line
+      alert('Pekerjaan berhasil ditambahkan');
     });
   },
 };

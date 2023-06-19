@@ -3,6 +3,7 @@ import JobSource from '../../data/job-source';
 import { createJobDetailTemplate } from '../templates/template-creator';
 import SaveButtonInitiator from '../../utils/like-button-presenter';
 import FavoriteJobIdb from '../../data/favorite-jobs-idb';
+import EditJob from '../../utils/edit-job';
 
 const Detail = {
   async render() {
@@ -14,9 +15,12 @@ const Detail = {
 
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render
+    const searchBar = document.querySelector('.search-box');
+    searchBar.style.display = 'none';
+
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const job = await JobSource.detailJob(url.id);
-    console.log(job);
+
     const jobContainer = document.querySelector('#job');
     SaveButtonInitiator.init({
       saveButtonContainer: document.querySelector('#saveButtonContainer'),
@@ -35,6 +39,25 @@ const Detail = {
     });
 
     jobContainer.innerHTML = createJobDetailTemplate(job);
+
+    const buttonDelete = document.querySelector('.button-delete');
+    const buttonEdit = document.querySelector('.button-edit');
+
+    buttonDelete.addEventListener('click', (event) => {
+      const jobId = event.target.id;
+      JobSource.deleteJob(jobId);
+      // eslint-disable-next-line
+      alert('Pekerjaan berhasil dihapus');
+      const container = document.querySelector('#job');
+      container.innerHTML = `
+        <h2>Lowongan pekerjaan sudah dihapus</h2>
+      `;
+    });
+
+    buttonEdit.addEventListener('click', (event) => {
+      const jobId = event.target.id;
+      EditJob.init(jobId);
+    });
   },
 };
 

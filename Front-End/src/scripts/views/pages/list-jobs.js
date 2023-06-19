@@ -1,24 +1,25 @@
 import JobSource from '../../data/job-source';
-import { createJobItemTemplate } from '../templates/template-creator';
+// import { createJobItemTemplate } from '../templates/template-creator';
+import JobSearchPresenter from './list-jobs/list-jobs-search-presenter';
+import JobSearchView from './list-jobs/list-jobs-search-view';
+import JobShowPresenter from './list-jobs/list-jobs-show-presenter';
+
+const view = new JobSearchView();
 
 const ListJobs = {
   async render() {
-    return `
-        <div id="content" class="content">
-            <h2 class="content-heading"><a id="content-heading-title" href="#/list-jobs">Daftar Pekerjaan</a></h2>
-            <div id="jobs" class="jobs">
-            </div>
-        </div>
-        `;
+    return view.getTemplate();
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render
-    const jobs = await JobSource.listJob();
-    const jobsContainer = document.querySelector('#jobs');
-    jobs.forEach((job) => {
-      jobsContainer.innerHTML += createJobItemTemplate(job);
-    });
+    const searchBar = document.querySelector('.search-box');
+    searchBar.style.display = 'block';
+
+    // eslint-disable-next-line
+    new JobSearchPresenter({ view, jobs: JobSource });
+
+    // eslint-disable-next-line
+    new JobShowPresenter({ view, jobs: JobSource });
   },
 };
 

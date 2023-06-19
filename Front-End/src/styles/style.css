@@ -184,6 +184,7 @@ header {
 
   position: fixed;
   bottom: 16px;
+  right: 16px;
   border-radius: 50%;
   border: 0;
 
@@ -191,3 +192,17 @@ header {
   color: white;
   cursor: pointer;
 }
+
+/* Home Page */
+.job-preview-content img {
+  max-height: fit-content;
+  max-width: 50vw;
+}
+
+/* About Us Page */
+
+/* Detail Page */
+
+/* Add Job Page */
+
+/* List Jobs Page */

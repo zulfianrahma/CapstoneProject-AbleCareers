@@ -2,7 +2,6 @@ import API_ENDPOINT from '../globals/api-endpoint';
 
 class JobSource {
   static async listJob() {
-    console.log('Get list of jobs');
     const response = await fetch(API_ENDPOINT.LIST);
     const responseJson = await response.json();
     console.log(responseJson);
@@ -10,7 +9,6 @@ class JobSource {
   }
 
   static async detailJob(id) {
-    console.log('Get detail of a job');
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const responseJson = await response.json();
     console.log(responseJson);
@@ -32,7 +30,7 @@ class JobSource {
     this.listJob();
   }
 
-  static async updateJob(job) {
+  static async updateJob({ job, id }) {
     const options = {
       method: 'PUT',
       headers: {
@@ -41,7 +39,7 @@ class JobSource {
       body: JSON.stringify(job),
     };
 
-    const response = await fetch(API_ENDPOINT.EDIT, options);
+    const response = await fetch(API_ENDPOINT.EDIT(id), options);
     const responseJson = await response.json();
     console.log(responseJson);
     this.listJob();
@@ -56,6 +54,18 @@ class JobSource {
     const responseJson = await response.json();
     console.log(responseJson);
     this.listJob();
+  }
+
+  static async searchJob(query) {
+    return (await this.listJob()).filter((job) => {
+      const loweredCaseJobTitle = (job.jobTitle || '-').toLowerCase();
+      const jammedJobTitle = loweredCaseJobTitle.replace(/\s/g, '');
+
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+
+      return jammedJobTitle.indexOf(jammedQuery) !== -1;
+    });
   }
 }
 

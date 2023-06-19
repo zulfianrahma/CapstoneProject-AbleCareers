@@ -25,23 +25,19 @@
         <div class="navbar-menu">
           <a href="/#/home">Home</a>
           <a href="/#/add-job">Add Job</a>
-          <a href="/#/about-us">About Us</a>
           <a href="/#/list-jobs">List Jobs</a>
+          <a href="/#/about-us">About Us</a>
+          <a href="/#/profile">Profile</a>
           <a href="/#/sign-in">Sign In</a>
         </div>
-        <!-- <div class="menu-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div> -->
       </nav>
       <!-- header -->
       <h1 class="header-title">Breaking Barriers, Building Futures: <br> <span>Connecting Disabled Talents</span></h1>
       <p class="header-subtitle">Find Your Dream Job With Ease</p>
       <img class="image-header" src="./homeimg.png" alt="Jobseeker">
       <div class="search-box">
-        <input type="text" placeholder="Search for Job Title">
-        <button type="submit">Search</button>
+        <input id="query" type="text" placeholder="Search for Job Title">
+        <button id="searchButton" type="submit">Search</button>
       </div>
     </header>
     <main id="main-content"></main>
@@ -49,22 +45,5 @@
       <p>Copyright © 2023 - AbleCareers</p>
       <p><a>C23-M4083</a></p>
     </footer>
-    <!-- <script>
-      console.log("about to fetch a data");
-    
-      GetData().catch(error => {
-          console.error(error);
-          });
-    
-      async function GetData(){
-          const response = await fetch('http://localhost:8080/jobs');
-          const responseJson = await response.json();
-          const jobs = await responseJson.data.jobs;
-          
-          console.log(jobs[0]);
-          const jobsContainer = document.querySelector('#main-content');
-          jobsContainer.innerHTML = jobs[0].id;
-        }
-    </script> -->
   </body>
 </html>

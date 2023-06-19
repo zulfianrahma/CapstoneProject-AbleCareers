@@ -272,6 +272,78 @@ header {
 /* Detail Page */
 
 /* Add Job Page */
+.content-heading a{
+  text-decoration: none;
+  color: #3377ff;
+ }
+ .content-heading{
+  text-align: center;
+  margin-top: 30px;
+ }
+ .top-form{
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 2rem;
+  margin-left: 30px;
+ }
+ .mid-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 30px;
+  margin-top: 30px;
+ }
+.mid-bot-form{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.bot-form{
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.bot-form textarea{
+  border: none;
+}
+.bot-form hr{
+  background-color: #3377ff;
+  width: 90%;
+}
+.last-form{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.profile-save #buttonSave{
+  display: flex;
+  justify-content: center;
+  margin-left: 710px;
+  width: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+border: none;
+border-radius: 5px;
+background-color: #3377ff;
+color: white;
+}
+ #inputJobTitle, #inputCompany, #inputLocation{
+  display: flex;
+  flex-direction: column;
+ }
+input{
+  border: none;
+}
+hr{
+  background-color: #3377ff;
+  height: 2.5px;
+  width: 500px;
+}
+.card-body{
+  border: solid #3377ff;
+}
 
 /* List Jobs Page */
 

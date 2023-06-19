@@ -182,24 +182,20 @@ const createTeamIdentityTemplate = () => `
 <h2><a href="https://github.com/ardiankholid/CapstoneProject-AbleCareers">Team</a></h2>
 <div class="about-container">
   <div class="ardian">
-    <img class="image" src="">
-    <h2><a href="https://github.com/ardiankholid">Ardian Kholid Ashidiq</a></h2><br>
-    <p>F013XB387</p>
+    <img class="image" src="Assets/ardian.png">
+    <h2><a href="https://github.com/ardiankholid">Ardian Kholid Ashidiq || F013XB387</a></h2>
   </div>
   <div class="aldyn">
-    <img class="image" src="">
-    <h2><a href="https://github.com/AldynG">Muhammad Aldyn Ghifari</a></h2><br>
-    <p>F086XB185</p>
+    <img class="image" src="Assets/aldyn.png">
+    <h2><a href="https://github.com/AldynG">Muhammad Aldyn Ghifari || F086XB185</a></h2>
   </div>
   <div class="safrin">
-    <img class="image" src="">
-    <h2><a href="https://github.com/aappiinn">Muhammad Safrin Utama</a></h2><br>
-    <p>F013XB169</p>
+    <img class="image" src="Assets/apin.png">
+    <h2><a href="https://github.com/aappiinn">Muhammad Safrin Utama || F013XB169</a></h2>
   </div>
   <div class="zulfian">
-    <img class="image" src="">
-    <h2><a href="https://github.com/zulfianrahma">Zulfian Rahmadiansyah</a></h2><br>
-    <p>F133XB482</p>
+    <img class="image" src="Assets/zulfian.png">
+    <h2><a href="https://github.com/zulfianrahma">Zulfian Rahmadiansyah || F133XB482</a></h2><br>
   </div>
 </div>
 `;

@@ -102,20 +102,26 @@ const createJobDetailTemplate = (job) => `
     </div>
 `;
 
-const createAddJobTemplate = () => `
+const createAddJobTemplate = () =>`
   <div class="card-body">
+   <div class ="top-form">
     <div class="form-group">
       <label for="inputJobTitle">Nama Pekerjaan</label>
       <input id="inputJobTitle" type="text" class="form-control" placeholder="Nama Pekerjaan">
+      <hr>
     </div>
     <div class="form-group">
       <label for="inputCompany">Nama Perusahaan</label>
       <input id="inputCompany" type="text" class="form-control" placeholder="Nama Perusahaan">
+      <hr>
     </div>
     <div class="form-group">
       <label for="inputLocation">Lokasi Pekerjaan</label>
       <input id="inputLocation" type="text" class="form-control" placeholder="Lokasi Pekerjaan">
+      <hr>
     </div>
+   </div>
+   <div class = "mid-form">
     <div class="form-group">
       <label for="inputJobType">Jenis Pekerjaan</label><br>
       <input type="radio" id="full-time" name="job-type" value="Full-time">
@@ -134,25 +140,40 @@ const createAddJobTemplate = () => `
       <input type="radio" id="hybrid" name="workplace-type" value="Hybrid">
       <label for="hybrid">Hybrid</label>
     </div>
+   </div>
+   <div class = "mid-bot-form">
     <div class="form-group">
       <label for="inputTags">Jenis Disabilitas</label><br>
+      <div class = "check-grid-item1">
       <input type="checkbox" id="tuna-daksa" name="input-tags" value="Tuna daksa">
       <label for="tuna-daksa">Tuna daksa</label><br>
       <input type="checkbox" id="tuna-rungu" name="input-tags" value="Tuna rungu">
       <label for="tuna-rungu">Tuna rungu</label><br>
+      </div>
+
+      <div class = "check-grid-item2">
       <input type="checkbox" id="tuna-wicara" name="input-tags" value="Tuna wicara">
       <label for="tuna-wicara">Tuna wicara</label><br>
       <input type="checkbox" id="tuna-netra" name="input-tags" value="Tuna netra">
       <label for="tuna-netra">Tuna netra</label><br>
+      </div>
+
+      <div class="check-grid-item3">
       <input type="checkbox" id="tuna-grahita" name="input-tags" value="Tuna grahita">
       <label for="tuna-grahita">Tuna grahita</label><br>
       <input type="checkbox" id="disabilitas-mental" name="input-tags" value="Disabilitas mental">
       <label for="disabilitas-mental">Disabilitas mental</label><br>
+      </div>
     </div>
+   </div>
+   <div class = "bot-form">
     <div class="form-group">
       <label for="inputDescription">Detail Pekerjaan</label><br>
       <textarea id="inputDescription" name="input-description" rows="10" cols="80" placeholder="tuliskan detail pekerjaan"></textarea> 
+      <hr>
     </div>
+   </div>
+   <div class="last-form">
     <div class="form-group">
       <label for="inputStatus">Status Lowongan</label><br>
       <input type="radio" id="open" name="job-status" value="Open">
@@ -160,10 +181,14 @@ const createAddJobTemplate = () => `
       <input type="radio" id="close" name="job-status" value="Close">
       <label for="close">Close</label><br>
     </div>
+    </div>
+    <div class = "profile-save">
     <div class="form-group">
       <button id="buttonSave" class="btn btn-success" value="save">Save</button>
     </div>
+    </div>
   </div>
+  
 `;
 
 const createSaveJobButtonTemplate = () => `

@@ -227,13 +227,14 @@ const createTeamIdentityTemplate = () => `
 
 const createProfileTemplate = () => `
 <div class="profile-top">
-    <div class="profile-picture" id="profile-picture">
-      <input type="file" id="picture-input" class="file-input" accept="image/*">
-      <button id="upload-button" class="upload-button" style="display: none;">Upload Picture</button>
-    <div>
+    <div class="profile-picture" id="profile-picture"></div>
+    <div class="profile-button">
+    <input type="file" id="picture-input" class="file-input" accept="image/*">
+    <button id="upload-button" class="upload-button" style="display: none;">Upload Picture</button>
+    </div>
 
     <p>USER PROFILE</p>
-    
+    </div>
     <div class="profile-info">
       <label>Name</label>
       <p class="profile-text" id="profile-name"></p>

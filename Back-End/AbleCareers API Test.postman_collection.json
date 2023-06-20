@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "623e58ba-c5a8-419c-98c0-8e19fb794431",
+		"name": "AbleCareers API Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26703654"
+	},
+	"item": [
+		{
+			"name": "Add Post With Complete Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobTitle\": \"Job Kedua\",\r\n    \"company\": \"Perusahaan B\",\r\n    \"location\": \"Jakarta\",\r\n    \"jobType\": \"full-time\", // full-time, part-time, contract, volunteer, internship\r\n    \"workplaceType\": \"remote\", // on-site, remote, hybrid\r\n    \"tags\": \"Front-End Developer\",\r\n    \"description\": \"mencari para jagoan Front-End Web Developer\",\r\n    \"status\": true // open/close\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detail Post with Correct ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts/ilhce4YGzqCygYl1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"ilhce4YGzqCygYl1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post with Complete Data",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobTitle\": \"Job Kedua\",\r\n    \"company\": \"Perusahaan B\",\r\n    \"location\": \"Jakarta\",\r\n    \"jobType\": \"full-time\", // full-time, part-time, contract, volunteer, internship\r\n    \"workplaceType\": \"hybrid\", // on-site, remote, hybrid\r\n    \"tags\": \"Full-Stack Developer\",\r\n    \"description\": \"mencari para jagoan Full-Stack Web Developer\",\r\n    \"status\": true // open/close\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts/ilhce4YGzqCygYl1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"ilhce4YGzqCygYl1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post with Correct Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts/ilhce4YGzqCygYl1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"ilhce4YGzqCygYl1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

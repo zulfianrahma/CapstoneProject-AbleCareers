@@ -8,7 +8,7 @@ import EditJob from '../../utils/edit-job';
 const Detail = {
   async render() {
     return `
-              <div id="job" class=""job></div>
+              <div id="job" class="job"></div>
               <div id="saveButtonContainer"></div>
           `;
   },

@@ -330,6 +330,12 @@ i {
 }
 
 /* Detail Page */
+.jobs {
+  text-align: center;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 /* Add Job Page */
 .content-heading a {
@@ -461,6 +467,8 @@ footer {
   color: var(--labelColor);
   transition: all 0.3s ease;
 }
+
+/* Profile Page*/
 
 /*footer*/
 footer {

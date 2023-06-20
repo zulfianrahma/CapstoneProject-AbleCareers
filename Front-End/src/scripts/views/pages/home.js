@@ -1,22 +1,17 @@
 import JobSource from '../../data/job-source';
 import {
   createJobPreviewTemplate,
-  createArticleTemplate,
+  createHomeBlogTemplate,
 } from '../templates/template-creator';
 
 const Home = {
   async render() {
     return `
-        <div id="content" class="content">
-            <h2 class="content-heading"><a id="content-heading-title" href="#/list-jobs">Beranda</a></h2>
-            <div id="article" class="article">
-              <h3>Tentang Disabilitas</h3>
-              <div id="article-container" class="article-container"></div>
-            </div>
-            <div id="jobs-preview" class="jobs-preview">
-              <h3>Lowongan Pekerjaan</h3>
-              <div id="jobs-preview-container" class="jobs-preview-container"></div>
-            </div>
+        <div id="blog" class="blog">
+            <h1 class="section-title">Strength in Diversity</h2>
+            <p>Dedicated to understanding the intersection of disabilities and cultural diversity.</p>
+            <div class="blog-wrapper"></div>
+            <div class="jobs-preview-container"></div>
         </div>
         `;
   },
@@ -26,11 +21,11 @@ const Home = {
     const searchBar = document.querySelector('.search-box');
     searchBar.style.display = 'none';
 
-    const articleContainer = document.querySelector('#article-container');
-    articleContainer.innerHTML = createArticleTemplate();
+    const blogContainer = document.querySelector('.blog-wrapper');
+    blogContainer.innerHTML = createHomeBlogTemplate();
 
     const jobs = await JobSource.listJob();
-    const jobsContainer = document.querySelector('#jobs-preview-container');
+    const jobsContainer = document.querySelector('.jobs-preview-container');
     jobs.forEach((job) => {
       jobsContainer.innerHTML += createJobPreviewTemplate(job);
     });

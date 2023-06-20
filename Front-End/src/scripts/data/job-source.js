@@ -23,6 +23,8 @@ class JobSource {
       },
       body: JSON.stringify(job),
     };
+    console.log('this is job from user ->', job);
+    console.log('this is JSON.stringify job', JSON.stringify(job));
 
     const response = await fetch(API_ENDPOINT.POST, options);
     const responseJson = await response.json();

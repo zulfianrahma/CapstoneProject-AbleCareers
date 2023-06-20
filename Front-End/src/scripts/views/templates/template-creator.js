@@ -248,7 +248,39 @@ const createProfileTemplate = () => `
       <button id="edit-button" class="edit-button">Edit Profile</button>
       <button id="save-button" class="save-button" style="display: none;">Save Changes</button>
     </div>
+`;
 
+const createHomeBlogTemplate = () => `
+  <div class="blog-card">
+    <img class="blog-image" src="./blog-1.jpg">
+    <div class="blog-detail">
+      <span>20 May 2023</span>
+      <h4>Inclusion and Accessibility</h4>
+      <p>Discussing issues related to physical accessibility, access to education and employment opportunities, and promoting social inclusion and community involvement for individuals with disabilities.</p>
+      <hr class="divinder">
+      <a href="http://www.thearc.org/" target="_blank" class="blog-more">Read more</a>
+    </div>
+  </div>
+  <div class="blog-card">
+    <img class="blog-image" src="./blog-2.jpg">
+    <div class="blog-detail">
+      <span>5 June 2023</span>
+      <h4>Inspiration and Success Stories</h4>
+      <p>Sharing inspirational stories and achievements of individuals with disabilities that can inspire and motivate readers to overcome obstacles and reach their full potential.</p>
+      <hr class="divinder">
+      <a href="https://themighty.com/" target="_blank" class="blog-more">Read more</a>
+    </div>
+  </div>
+  <div class="blog-card">
+    <img class="blog-image" src="./blog-3.jpg">
+    <div class="blog-detail">
+      <span>12 May 2023</span>
+      <h4>Social Aspects and Rights</h4>
+      <p>Addressing issues of human rights, public policy, and advocacy for individuals with disabilities, including law enforcement, access to public services, and protection from discrimination.</p>
+      <hr class="divinder">
+      <a href="https://www.disabilityscoop.com/" target="_blank" class="blog-more">Read more</a>
+    </div>
+  </div>
 `;
 
 export {
@@ -261,4 +293,5 @@ export {
   createUnsaveJobButtonTemplate,
   createTeamIdentityTemplate,
   createProfileTemplate,
+  createHomeBlogTemplate,
 };

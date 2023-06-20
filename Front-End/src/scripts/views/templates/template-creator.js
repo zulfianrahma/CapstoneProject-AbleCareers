@@ -1,7 +1,9 @@
 const createJobPreviewTemplate = (job) => `
   <div class="job-preview">
     <div class="job-preview-content">
+      <!-- image 
       <img src="https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg">
+      -->
       <h3 class="job-name">
       <a href="/#/jobs/${job.id}">${job.jobTitle || '-'}</a>
       </h3>

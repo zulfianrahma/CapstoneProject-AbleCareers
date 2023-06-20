@@ -11,6 +11,7 @@ const Home = {
             <h1 class="section-title">Strength in Diversity</h2>
             <p>Dedicated to understanding the intersection of disabilities and cultural diversity.</p>
             <div class="blog-wrapper"></div>
+            <h1 class="setion-title">Lowongan Pekerjaan<h1>
             <div class="jobs-preview-container"></div>
         </div>
         `;
